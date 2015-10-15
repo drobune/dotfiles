@@ -149,3 +149,19 @@ ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+
+
+function random_cowsay() {
+    COWS="/usr/share/cows"
+    NBRE_COWS=$(ls -1 $COWS | wc -l)
+    COWS_RANDOM=$(expr $RANDOM % $NBRE_COWS + 1)
+    COW_NAME=$(ls -1 $COWS | awk -F\. -v COWS_RANDOM_AWK=$COWS_RANDOM 'NR == COWS_RANDOM_AWK {print $1}')
+    cowsay -f $COW_NAME "`fortune -s`"
+}
+
+if which fortune cowsay >/dev/null; then
+    while :
+    do
+        random_cowsay 2>/dev/null && break
+    done
+fi && unset -f random_cowsay
