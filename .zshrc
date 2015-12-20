@@ -48,9 +48,6 @@ export PATH=$PATH:$GOPATH/bin
 
 export CLOUDSDK_PYTHON=python2
 
-# The next line updates PATH for the Google Cloud SDK.
-source '/home/drobune/google-cloud-sdk/path.zsh.inc'
-
 # The next line enables shell command completion for gcloud.
 source '/home/drobune/google-cloud-sdk/completion.zsh.inc'
 
@@ -165,3 +162,13 @@ if which fortune cowsay >/dev/null; then
         random_cowsay 2>/dev/null && break
     done
 fi && unset -f random_cowsay
+
+alias dockviz="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz"
+
+source /usr/share/nvm/init-nvm.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/home/drobune/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/home/drobune/google-cloud-sdk/completion.zsh.inc'
