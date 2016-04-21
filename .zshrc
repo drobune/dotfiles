@@ -172,3 +172,5 @@ source '/home/drobune/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables shell command completion for gcloud.
 source '/home/drobune/google-cloud-sdk/completion.zsh.inc'
+
+export K8S_VERSION=$(curl -sS https://storage.googleapis.com/kubernetes-release/release/stable.txt)
