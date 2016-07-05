@@ -11,12 +11,13 @@ setopt hist_ignore_dups
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bgnotify)
+plugins=(git bgnotify themes)
 
 # User configuration
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 export MANPATH="/usr/local/man:$MANPATH"
+export ZSH_THEME="agnoster"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -142,10 +143,10 @@ function git_not_pushed()
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
 PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} $(git_not_pushed) % %{$reset_color%}'
 
-ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg[red]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+#ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg[red]%}"
+#ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
+#ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
+#ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 
 function random_cowsay() {
@@ -174,3 +175,5 @@ source '/home/drobune/google-cloud-sdk/path.zsh.inc'
 source '/home/drobune/google-cloud-sdk/completion.zsh.inc'
 
 export K8S_VERSION=$(curl -sS https://storage.googleapis.com/kubernetes-release/release/stable.txt)
+
+theme agnoster
